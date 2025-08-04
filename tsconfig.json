@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": ".", // this is usually the root of your project
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "paths": {
+      "utils/*": ["src/utils/*"],  // adjust this path to your project structure
+      "@components/*": ["src/components/*"],
+      "@src/*": ["src/*"],
+      "@pages/*": ["src/pages/*"],
+      "@assets/*": ["src/assets/*"],
+      "@styles/*": ["src/styles/*"],
+      "@data/*": ["src/data/*"],
+    }
+  }
+}
