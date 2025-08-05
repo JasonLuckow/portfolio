@@ -1,5 +1,6 @@
-import Home from "./pages/Home";
-import ErrorPage from "./pages/ErrorPage";
+import Home from "@pages/Home";
+import ErrorPage from "@pages/ErrorPage";
+import React from "react";
 
 const routes = [
   {
@@ -8,7 +9,7 @@ const routes = [
     errorElement: <ErrorPage />,
   },
   {
-    path: "/home",
+    path: "/portfolio",
     element: <Home />,
     errorElement: <ErrorPage />,
   },

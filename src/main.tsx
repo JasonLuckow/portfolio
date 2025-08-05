@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import '@styles/index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import routes from '@src/routes.jsx';
+import React from 'react';
+import Home from './pages/Home';
 
 
 // import React = require('react');
@@ -11,7 +13,5 @@ import routes from '@src/routes.jsx';
 const router = createBrowserRouter(routes);
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
+  <Home></Home>
 )

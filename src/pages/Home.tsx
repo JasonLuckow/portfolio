@@ -135,7 +135,7 @@ function App() {
                                             <h4 className="font-bold text-lg mr-4">Backend</h4>
                                             <div className="flex-grow border-b border-gray-700"></div>
                                         </div>
-                                        <ul className="list-disc pl-10 columns-1 md:columns-2 lg:columns-3 xl:columns-4 border border-gray-700 rounded-lg p-4 self-center">
+                                        <ul className="list-disc pl-10 columns-1 md:columns-2 lg:columns-3 xl:columns-4 border border-gray-700 rounded-lg p-4 self-center mt-4">
                                             {me.skills.backendSkills.map((skill, index) => (
                                                 <p key={index} className="flex border border-gray-700 rounded-lg m-4 p-2 place-content-center">{skill}</p>
                                             ))}
@@ -144,7 +144,7 @@ function App() {
                                             <h4 className="font-bold text-lg mr-4">Frontend</h4>
                                             <div className="flex-grow border-b border-gray-700"></div>
                                         </div>
-                                        <ul className="list-disc pl-10 columns-1 sm:columns-2 md:columns-2 border border-gray-700 rounded-lg p-4">
+                                        <ul className="list-disc pl-10 columns-1 sm:columns-2 md:columns-2 border border-gray-700 rounded-lg p-4 mt-4">
                                             {me.skills.frontendSkills.map((skill, index) => (
                                                 <p key={index} className="flex border border-gray-700 rounded-lg m-4 p-2 place-content-center">{skill}</p>
                                             ))}
@@ -153,7 +153,7 @@ function App() {
                                             <h4 className="font-bold text-lg mr-4">Tools & Platforms</h4>
                                             <div className="flex-grow border-b border-gray-700"></div>
                                         </div>
-                                        <ul className="list-disc pl-10 columns-1 md:columns-2 lg:columns-3 xl:columns-4 border border-gray-700 rounded-lg p-4">
+                                        <ul className="list-disc pl-10 columns-1 md:columns-2 lg:columns-3 xl:columns-4 border border-gray-700 rounded-lg p-4 mt-4">
                                             {me.skills.toolsPlatforms.map((skill, index) => (
                                                 <p key={index} className="flex border border-gray-700 rounded-lg m-4 p-2 place-content-center">{skill}</p>
                                             ))}
@@ -162,7 +162,7 @@ function App() {
                                             <h4 className="font-bold text-lg mr-4">Data</h4>
                                             <div className="flex-grow border-b border-gray-700"></div>
                                         </div>
-                                        <ul className="list-disc pl-10 border columns-1 sm:columns-2 border-gray-700 rounded-lg p-4">
+                                        <ul className="list-disc pl-10 border columns-1 sm:columns-2 border-gray-700 rounded-lg p-4 mt-4">
                                             {me.skills.dataSkills.map((skill, index) => (
                                                 <p key={index} className="flex border border-gray-700 rounded-lg m-4 p-2 place-content-center">{skill}</p>
                                             ))}
