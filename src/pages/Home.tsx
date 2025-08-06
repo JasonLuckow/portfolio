@@ -43,31 +43,31 @@ function App() {
                         </p>
                     </div>
                     <div className='flex gap-5 border-t border-gray-00 pl-2 pt-2 pb-2'>
-                        <a href={me.contact.github} target="_blank" rel="noopener noreferrer">
+                        <a href={me.contact.github} target="_blank" rel="noopener noreferrer" className='active:scale-90 transition transform select-none'>
                             <Github />
                         </a>
-                        <a href={me.contact.linkedin} target="_blank" rel="noopener noreferrer"> 
+                        <a href={me.contact.linkedin} target="_blank" rel="noopener noreferrer" className='active:scale-90 transition transform select-none'> 
                             <Linkedin />
                         </a>
-                        <a href="mailto:json.luck@outlook.com" target="_blank" rel="noopener noreferrer">
+                        <a href="mailto:json.luck@outlook.com" target="_blank" rel="noopener noreferrer" className='active:scale-90 transition transform select-none'>
                             <Mail />
                         </a>
-                        <a>
+                        <a className='active:scale-90 transition transform select-none'>
                             Resume
                         </a>
                     </div>
                 </div>
                 <div className="flex flex-col md:w-2/3 text-left ">
                     <div className="flex flex-col md:w-full md:items-center gap-5 sm:flex-row md:gap-0 space-x-4 sm:sticky top-10 z-10 bg-gray-800/50 p-4 rounded-lg pt-5 mb-10 self-center md:justify-center backdrop-blur">
-                        <a href="#experience" className="flex h-min w-25 px-2 py-1 bg-blue-500/95 text-white rounded justify-center hover:bg-white hover:text-black ">Experience</a>
-                        <a href="#projects" className="flex h-min w-25 px-2 py-1 bg-green-500/95 text-white rounded justify-center hover:bg-white hover:text-black ">Projects</a>
-                        <a href="#skills" className="flex h-min w-25 px-2 py-1 bg-purple-500/95 text-white rounded justify-center hover:bg-white hover:text-black ">Skills</a>
-                        <a href="#education" className="flex h-min w-25 px-2 py-1 bg-yellow-500/95 text-white rounded justify-center hover:bg-white hover:text-black ">Education</a>
+                        <a href="#experience" className="flex h-min w-25 px-2 py-1 bg-blue-500/95 text-white rounded justify-center hover:bg-white hover:text-black active:scale-90 transition transform select-none">Experience</a>
+                        <a href="#projects" className="flex h-min w-25 px-2 py-1 bg-green-500/95 text-white rounded justify-center hover:bg-white hover:text-black active:scale-90 transition transform select-none">Projects</a>
+                        <a href="#skills" className="flex h-min w-25 px-2 py-1 bg-purple-500/95 text-white rounded justify-center hover:bg-white hover:text-black active:scale-90 transition transform select-none">Skills</a>
+                        <a href="#education" className="flex h-min w-25 px-2 py-1 bg-yellow-500/95 text-white rounded justify-center hover:bg-white hover:text-black active:scale-90 transition transform select-none">Education</a>
                     </div>
                     <div>
                         <section id='experience' className="flex flex-col pb-5 scroll-mt-32">
                             <div className="flex border-t border-blue-500 pt-5 pb-5">
-                                <p className='font-bold'>Experience</p>
+                                <h1 className='font-bold text-2xl'>Experience</h1>
                             </div>
                             {me.experience.map((job, index) => (
                                 <Timeline
@@ -85,48 +85,67 @@ function App() {
                                                 </TimelineSeparator>
                                                 <TimelineContent>
                                                 <p className="text-gray-500">{job.duration}</p>
-                                                <div key={index} className="flex flex-col border-gray-00 pt-3 pb-7 pl-5">
-                                                        <h3 className="font-bold">{job.title} at {job.company}</h3>
-                                                        <ul className="list-disc pl-5">
-                                                            {job.responsibilities.map((responsibility, rIndex) => (
-                                                                <li key={rIndex}>{responsibility}</li>
-                                                                ))}
-                                                        </ul>
-                                                    </div>
-                                                    {job.keyAchievements && job.keyAchievements.length > 0 && (
-                                                        <div className="mt-2 border border-gray-700 rounded-lg p-4 bg-gray-950">
-                                                            <h4 className="font-bold">Key Achievements:</h4>
-                                                            <ul className="list-disc pl-5">
-                                                                {job.keyAchievements.map((achievement, aIndex) => (
-                                                                    <li key={aIndex}>{achievement}</li>
+                                                <div key={index} className="flex flex-col border-gray-00 pt-3 pb-7 pl-2 gap-2">
+                                                    <h3 className="font-bold">{job.title} at {job.company}</h3>
+                                                    <div className="flex flex-col gap-5">
+                                                    {(job.responsibilities as { [key: string]: string[] }[]).map((responsibility, rIndex) => {
+                                                        const [key, values] = Object.entries(responsibility)[0];
+                                                    
+                                                        return (
+                                                            <ul key={rIndex} className="list-disc ml-8">
+                                                                <span className="font-semibold">{key}</span>
+                                                                {values.map((value, vIndex) => (
+                                                                    <li key={vIndex} className='ml-5'>{value}</li>
                                                                 ))}
                                                             </ul>
-                                                        </div>
-                                                    )}
+                                                        );
+                                                    })}
+                                                    </div>
+                                                </div>
+                                                {job.keyAchievements && job.keyAchievements.length > 0 && (
+                                                    <div className="mt-2 border border-gray-700 rounded-lg p-4 bg-gray-950 flex flex-col gap-2">
+                                                        <h4 className="font-bold">Key Achievements:</h4>
+                                                        <ul className="list-disc pl-5">
+                                                            {job.keyAchievements.map((achievement, aIndex) => (
+                                                                <li key={aIndex}>{achievement}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                )}
                                                 </TimelineContent>
                                         </TimelineItem>
                                 </Timeline>
                             ))}
                         </section>
                         <section id='projects' className="flex flex-col pb-5 scroll-mt-32">
-                            <div className="flex border-t border-green-500 pt-5 pb-5">
-                                <p className='font-bold'>Projects</p>
+                            <div className="flex border-t border-green-500 pt-5 pb-5 mb-2">
+                                <h1 className='font-bold text-2xl'>Personal Projects</h1>
                             </div>
+                            <div className="flex flex-col gap-20">
                             {me.projects.map((project, index) => (
-                                <div key={index} className="flex flex-col border-t border-gray-00 pt-3 pb-7 pl-5">
-                                    <h3 className="font-bold">{project.name}</h3>
-                                    <p className="text-gray-500">{project.description}</p>
-                                    <ul className="list-disc pl-5">
-                                        {project.technologies.map((tech, tIndex) => (
-                                            <li key={tIndex}>{tech}</li>
-                                        ))}
-                                    </ul>
+                                <div key={index} className="flex flex-col lg:flex-row pt-3 pb-7 pl-5 gap-5 justify-between">
+                                    <div className="flex flex-col self-center w-1/2">
+                                        <h2 className="text-m font-bold border border-gray-700 rounded p-2 pl-7 pr-7 mb-5 w-fit bg-gray-950">{project.status}</h2>
+                                        <h3 className="font-bold">{project.name}</h3>
+                                        <p className="text-gray-500">{project.description}</p>
+                                        <ul className="list-disc pl-5 columns-1 lg:columns-2 2xl:columns-3 mt-2">
+                                            {project.technologies.map((tech, tIndex) => (
+                                                <li key={tIndex}>{tech}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    {project.demoLink && (
+                                        <div className="mt-2 flex ">
+                                            <img src={project.demoLink} alt={`${project.name} demo`} className="w-128 select-none rounded-lg" />
+                                        </div>
+                                    )}
                                 </div>
                             ))}
+                            </div>
                         </section>
                         <section id='skills' className="flex flex-col pb-5 scroll-mt-32">
                             <div className="flex border-t border-purple-500 pt-5 pb-5">
-                                <p className='font-bold'>Skills</p>
+                                <h1 className='font-bold text-2xl'>Skills</h1>
                             </div>
                             {me.skills && (
                                 <div className="flex flex-col pb-7 pl-5">
@@ -173,13 +192,14 @@ function App() {
                         </section>
                         <section id='education' className="flex flex-col pb-5 scroll-mt-32">
                             <div className="flex border-t border-yellow-500 pt-5 pb-5">
-                                <p className='font-bold'>Education</p>
+                                <h1 className='font-bold text-2xl'>Education</h1>
                             </div>
+                            <div className='divide-y divide-gray-00'>
                             {me.education.map((edu, index) => (
-                                <div key={index} className="flex flex-col border-t border-gray-00 pt-3 pb-7 pl-5">
+                                <div key={index} className="flex flex-col pt-3 pb-7 pl-5 ">
                                     <h3 className="font-bold">{edu.degree}</h3>
                                     <p className="text-gray-500">{edu.institution} - {edu.year}</p>
-                                    <p className="text-gray-500">GPA: {edu.gpa} {edu.honors == "" ? "" : `(${edu.honors})`}</p>
+                                    {edu.gpa ? <p className="text-gray-500">GPA: {edu.gpa} {edu.honors == "" ? "" : `(${edu.honors})`}</p> : null}
                                     <h4 className="font-bold pt-15">Relevant Courses:</h4>
                                     <ul className="list-disc pl-5 pb-3 columns-1 md:columns-2">
                                         {edu.relevantCourses.map((course, cIndex) => (
@@ -198,6 +218,7 @@ function App() {
                                     )}
                                 </div>
                             ))}
+                            </div>
                         </section>  
                     </div>
                 </div>
