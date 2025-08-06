@@ -165,14 +165,14 @@ export const me = {
             "name": "Portfolio Website",
             "description": "A personal portfolio website to showcase my projects and skills.",
             "technologies": ["React", "TailwindCSS", "TypeScript", "Vite", "GitHub Actions"],
-            "demoLink": "../src/assets/portfolio-demo.gif",
+            "demoLink": "/assets/portfolio-demo.gif",
             "status": "In Progress"
         },
         {
             "name": "Battleship Game",
             "description": "A vanilla JavaScript battleship game that allows the user to choose drag and drop ships and change rotation.",
             "technologies": ["Programmed using JavaScript", "Unit tested using Jest", "Built using webpack"],
-            "demoLink": "../src/assets/battleship-demo.gif",
+            "demoLink": "/assets/battleship-demo.gif",
             "status": "Completed!"
         },
           
