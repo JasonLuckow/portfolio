@@ -121,26 +121,26 @@ function App() {
                             <div className="flex border-t border-green-500 pt-5 pb-5 mb-2">
                                 <h1 className='font-bold text-2xl'>Personal Projects</h1>
                             </div>
-                            <div className="flex flex-col gap-20">
-                            {me.projects.map((project, index) => (
-                                <div key={index} className="flex flex-col lg:flex-row pt-3 pb-7 pl-5 gap-5 justify-between">
-                                    <div className="flex flex-col self-center w-1/2">
-                                        <h2 className="text-m font-bold border border-gray-700 rounded p-2 pl-7 pr-7 mb-5 w-fit bg-gray-950">{project.status}</h2>
-                                        <h3 className="font-bold">{project.name}</h3>
-                                        <p className="text-gray-500">{project.description}</p>
-                                        <ul className="list-disc pl-5 columns-1 lg:columns-2 2xl:columns-3 mt-2">
-                                            {project.technologies.map((tech, tIndex) => (
-                                                <li key={tIndex}>{tech}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    {project.demoLink && (
-                                        <div className="mt-2 flex ">
-                                            <img src={project.demoLink} alt={`${project.name} demo`} className="w-128 select-none rounded-lg" />
+                            <div className='divide-y divide-gray-00 flex flex-col gap-10'>
+                                {me.projects.map((project, index) => (
+                                    <div key={index} className="flex flex-col lg:flex-row pt-3 pb-10 pl-5 gap-5 justify-between">
+                                        <div className="flex flex-col self-center w-1/2">
+                                            <h2 className="text-m font-bold border border-gray-700 rounded p-2 pl-7 pr-7 mb-5 w-fit bg-gray-950">{project.status}</h2>
+                                            <h3 className="font-bold">{project.name}</h3>
+                                            <p className="text-gray-500">{project.description}</p>
+                                            <ul className="list-disc pl-5 columns-1 lg:columns-2 2xl:columns-3 mt-2">
+                                                {project.technologies.map((tech, tIndex) => (
+                                                    <li key={tIndex}>{tech}</li>
+                                                ))}
+                                            </ul>
                                         </div>
-                                    )}
-                                </div>
-                            ))}
+                                        {project.demoLink && (
+                                            <div className="mt-2 flex ">
+                                                <img src={project.demoLink} alt={`${project.name} demo`} className="w-128 select-none rounded-lg" />
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
                             </div>
                         </section>
                         <section id='skills' className="flex flex-col pb-5 scroll-mt-32">
@@ -194,9 +194,9 @@ function App() {
                             <div className="flex border-t border-yellow-500 pt-5 pb-5">
                                 <h1 className='font-bold text-2xl'>Education</h1>
                             </div>
-                            <div className='divide-y divide-gray-00'>
+                            <div className='divide-y divide-gray-00 flex flex-col gap-10'>
                             {me.education.map((edu, index) => (
-                                <div key={index} className="flex flex-col pt-3 pb-7 pl-5 ">
+                                <div key={index} className="flex flex-col pt-3 pb-10 pl-5 ">
                                     <h3 className="font-bold">{edu.degree}</h3>
                                     <p className="text-gray-500">{edu.institution} - {edu.year}</p>
                                     {edu.gpa ? <p className="text-gray-500">GPA: {edu.gpa} {edu.honors == "" ? "" : `(${edu.honors})`}</p> : null}
