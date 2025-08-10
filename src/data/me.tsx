@@ -77,9 +77,9 @@ export const me = {
             "responsibilities": [
                 {
                     "Desktop Applications:" : [
-                        "Developed and maintained desktop appplications using Electron, React, TypeScript, Vite, MUI, Java, and Spring Boot.",
+                        "Developed and maintained desktop applications using Electron, React, TypeScript, Vite, MUI, Java, and Spring Boot.",
                         "Deployed on Windows and Linux platforms.",
-                        "Increased end user productivity by 30% by providing users a way to automate data collection and simulate hardware interactions.",
+                        "Increased end-user productivity by 30% by providing users a way to automate data collection and simulate hardware interactions.",
                     ]
                 },
                 {
