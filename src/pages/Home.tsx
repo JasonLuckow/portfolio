@@ -31,9 +31,6 @@ function App() {
                         <h2>{me.title}</h2>
                     </div>
                 </div>
-                <div>
-                    {/* <h1 className='font-extrabold text-3xl animate-bounce'>About</h1> */}
-                </div>
             </header>
             <main className="flex flex-col md:flex-row gap-10 md:gap-20 scroll-smooth w-f100 items-center">
                 <div className="flex flex-col md:self-start md:w-1/3 text-left md:sticky top-10 ">
@@ -51,9 +48,6 @@ function App() {
                         </a>
                         <a href="mailto:json.luck@outlook.com" target="_blank" rel="noopener noreferrer" className='active:scale-90 transition transform select-none'>
                             <Mail />
-                        </a>
-                        <a className='active:scale-90 transition transform select-none'>
-                            Resume
                         </a>
                     </div>
                 </div>

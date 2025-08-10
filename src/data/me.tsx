@@ -79,7 +79,6 @@ export const me = {
                     "Desktop Applications:" : [
                         "Developed and maintained desktop appplications using Electron, React, TypeScript, Vite, MUI, Java, and Spring Boot.",
                         "Deployed on Windows and Linux platforms.",
-                        "Data collection and analysis using Prometheus and Grafana.",
                         "Increased end user productivity by 30% by providing users a way to automate data collection and simulate hardware interactions.",
                     ]
                 },
